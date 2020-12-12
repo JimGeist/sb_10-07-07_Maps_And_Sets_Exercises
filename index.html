@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Unit 10.07.07 - Maps and Sets Exercises</title>
+
+  <link rel="stylesheet" type="text/css" href="maps.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+
+  <script type="text/javascript" src="10-07-07_Maps_And_Sets_Exercises.js"></script>
+  <script type="text/javascript" src="10-07-07_Maps_And_Sets_Exercises-test.js"></script>
+</head>
+
+<body>
+  <h1>10.07.07 - Maps and Sets Exercises</h1>
+  <h2>Quick Questions #1 - What does <span class="code">new Set([1, 1, 2, 2, 3, 4])</span> return?</h2>
+  <p>
+    It returns <span class="code"></span>{1, 2, 3, 4}</span> because sets cannot have duplicates.
+  </p>
+  <h2>Quick Question #2 - What does <span class="code">[...new Set("referee")].join("")</span> return?</h2>
+  <p>
+    It returns <span class="code">"ref"</span> because sets cannot have duplicates and the duplicate letters are
+    removed from the string when set iterates over the string. <span class="code">join("")</span> concatenates each
+    element of the set together with no spaces between each element.
+  </p>
+  <h2>Quick Question #3 - What does the Map m look like after running the following code?</h2>
+  <span class="code">&nbsp;&nbsp;let m = new Map();<br>
+    &nbsp;&nbsp;m.set([1, 2, 3], true);<br>
+    &nbsp;&nbsp;m.set([1, 2, 3], false);</span><br>
+  <p>
+    <span class="code">m</span> will look like <span class="code">{[1, 2, 3] => true, [1, 2, 3] => false}</span>
+    because an array is the key to the set. Each <span class="code">set</span> method calls with an array creates a
+    new entry because an array is a reference object and each array in the method call is a new reference. To have
+    only one array <span class="code">[1, 2, 3]</span> key, declare the array and then call the <span
+      class="code">m.set()</span> method: <br>
+    <span class="code">&nbsp;&nbsp;const arr123 = [1,2,3]; <br>
+      &nbsp;&nbsp;m.set(arr123, true); <br>
+      &nbsp;&nbsp;m.set(arr123, false); </span><br>
+    will yield <span class="code">{[1, 2, 3] => false}</span>.<br><br>
+
+  </p>
+
+</body>
+
+</html>
